@@ -1,0 +1,26 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: white;
+}
+.input-container {
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 2px white solid;
+}
+
+#menu {
+    height: 95%;
+    overflow-y: auto;
+}
+
+.buttons-container {
+    height: 5%;
+}
