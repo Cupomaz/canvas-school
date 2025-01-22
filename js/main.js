@@ -11,6 +11,7 @@ const menu = new Menu(menuElement);
 canvas.width = window.innerWidth * 0.8;
 canvas.height = window.innerHeight;
 
+let interval;
 let run = true;
 const gravity = 0.08;
 
@@ -21,15 +22,14 @@ function gameLoop() {
 
   if (run == false) {
     console.log("stop");
+    clearInterval(interval);
     return;
   }
 
   c.fillStyle = "black";
   c.fillRect(0, 0, canvas.width, canvas.height);
 
-  menu.menuItems.forEach((e) => {
-    e.updateFirework();
-  });
+  menu.updateFireworks();
 }
 
 addButton.addEventListener("click", () => {
@@ -38,10 +38,14 @@ addButton.addEventListener("click", () => {
 });
 
 runButton.addEventListener("click", () => {
+  if (interval) {
+    clearInterval(interval);
+  }
+
   menu.render();
-  menu.setItems();
+  menu.createFireworks();
   run = true;
-  setInterval(gameLoop, 17);
+  interval = setInterval(gameLoop, 17);
 });
 
 exportButton.addEventListener("click", () => {

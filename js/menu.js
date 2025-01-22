@@ -23,9 +23,15 @@ class Menu {
     }
   }
 
-  setItems() {
+  createFireworks() {
     this.menuItems.forEach((e) => {
       e.createFirework();
+    });
+  }
+
+  updateFireworks() {
+    this.menuItems.forEach((e) => {
+      e.updateFirework();
     });
   }
 

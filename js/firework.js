@@ -26,6 +26,10 @@ class Firework {
     }
   }
 
+  removeParticles() {
+    this.particles = [];
+  }
+
   launch() {
     const initialVelocity = Math.sqrt(2 * gravity * (canvas.height - this.y));
     this.shell = new Particle(
